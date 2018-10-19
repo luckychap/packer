@@ -1,4 +1,7 @@
 {
+  "variables":{
+    "version": ""
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
@@ -11,10 +14,10 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "iso/CentOS-7-x86_64-Everything-1708.iso"
+        "iso/CentOS-7-x86_64-Minimal-1804.iso"
       ],
       "iso_checksum_type": "md5",
-      "iso_checksum": "d23eab94eaa22e3bd34ac13caf923801",
+      "iso_checksum": "fabdc67ff3a1674a489953effa285dfd",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -48,7 +51,8 @@
           "scripts": [
             "scripts/vagrant.sh",
             "scripts/virtualbox.sh",
-            "scripts/sshd.sh"
+            "scripts/sshd.sh",
+            "scripts/ansible.sh"
           ]
         }
       }
@@ -57,8 +61,13 @@
   "post-processors": [
     [
       {
-        "output": "builds/{{.Provider}}-centos7.box",
-        "type": "vagrant"
+        "type": "vagrant",
+        "output": "builds/{{.Provider}}-centos7.box"
+      },
+      {
+        "type": "vagrant-cloud",
+        "box_tag": "Lucky/centos7",
+        "version": "{{user `version`}}"
       }
     ]
   ]
