@@ -1,3 +1,3 @@
 #!/bin/bash
 
-packer build packer_image.json
+packer build  -var 'version=1.0' packer_image.json
