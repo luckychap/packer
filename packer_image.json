@@ -66,7 +66,7 @@
       },
       {
         "type": "vagrant-cloud",
-        "box_tag": "Lucky/centos7",
+        "box_tag": "Lucky/centos7_ansible",
         "version": "{{user `version`}}"
       }
     ]
