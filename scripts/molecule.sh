@@ -8,4 +8,5 @@ yum install -y gcc \
   openssl-devel \
   libselinux-python
 
-pip install molecule
+pip install molecule \
+  docker-py
