@@ -1,5 +1,5 @@
 {
-  "version": "0.2",
+  "version": "0.3",
   "scripts": "scripts/vagrant.sh,scripts/virtualbox.sh,scripts/sshd.sh,scripts/ansible.sh,scripts/docker.sh,scripts/molecule.sh",
   "box_name": "molecule",
   "box_tag": "Lucky/centos7_molecule"
